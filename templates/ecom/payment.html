@@ -1,0 +1,78 @@
+{% extends 'ecom/customer_base.html' %}
+{% load static %}
+
+{% block content %}
+<head>
+
+</head>
+<style media="screen">
+
+.panel-title {display: inline;font-weight: bold;}
+.checkbox.pull-right { margin: 0; }
+.pl-ziro { padding-left: 0px; }
+</style>
+<br><br>
+<marquee scrolldelay="70">Söwdaňyz üçin sag boluň!!!</marquee>
+<marquee scrolldelay="50">Biz bilen galyň! </marquee>
+<br><br>
+<div class="container" style="text-align:center; padding-left:300px;">
+    <div class="row">
+        <div class="col-xs-12 col-md-4" style="height:500px; width:600px;">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h3 class="panel-title">
+                        Töleg maglumatlary
+                    </h3>
+                    <div class="checkbox pull-right">
+                        <label>
+                            <input type="checkbox" />
+                            Ýatda saklaň
+                        </label>
+                    </div>
+                </div>
+                <div class="panel-body">
+                    <form role="form" method="post">
+                    <div class="form-group">
+                        <label for="cardNumber">
+                            KART NOMERI</label>
+                        <div class="input-group">
+                            <input type="text" class="form-control" id="cardNumber" placeholder="Dogry kart belgisi"
+                                zerur awtofokus />
+                            <span class="input-group-addon"><span class="glyphicon glyphicon-lock"></span></span>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-xs-7 col-md-7">
+                            <div class="form-group">
+                                <label for="expityMonth">
+                                    Gysgaça sene</label>
+                                <div class="col-xs-6 col-lg-6 pl-ziro">
+                                    <input type="text" class="form-control" id="expityMonth" placeholder="MM" talap edilýär />
+                                </div>
+                                <div class="col-xs-6 col-lg-6 pl-ziro">
+                                    <input type="text" class="form-control" id="expityYear" placeholder="YY" talap edilýär /></div>
+                            </div>
+                        </div>
+                        <div class="col-xs-5 col-md-5 pull-right">
+                            <div class="form-group">
+                                <label for="cvCode">
+                                    SW kod</label>
+                                <input type="password" class="form-control" id="cvCode" placeholder="CV" talap edilýär />
+                            </div>
+                        </div>
+                    </div>
+                    </form>
+                </div>
+            </div>
+            <ul class="nav nav-pills nav-stacked">
+                <li class="active"><a href="#" style="background-color: #ff6600;"><span class="badge pull-right">{{total}}</span>Jemleýji töleg</a>
+                </li>
+            </ul>
+            <br/>
+            <a href="/payment-success" class="btn btn-primary btn-lg btn-block" role="button">Töleg</a>
+        </div>
+    </div>
+</div>
+
+
+{% endblock content %}
